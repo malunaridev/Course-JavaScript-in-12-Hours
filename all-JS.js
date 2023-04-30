@@ -3,3 +3,6 @@
 // Math.floor()
 // number()
 // prompt()
+
+
+//methods
