@@ -24,8 +24,31 @@ const squares = document.querySelectorAll(".colorSquare");
 console.log(squares[0].value);
 
 // forEach
-squares.forEach((square) => {
-  square.onclick = () => console.log(square.value);
-});
+// squares.forEach((square) => {
+//   square.onclick = () => console.log(square.value);
+// });
 
 // contar quantas vezes foi clicado
+const timesClicked = {
+  red: 0,
+  yellow: 0,
+  green: 0,
+};
+squares.forEach((square) => {
+  square.onclick = () => {
+    timesClicked[square.value] += 1;
+    square.innerHTML = timesClicked[square.value];
+  };
+});
+
+function clearScores() {
+  timesClicked.red = 0;
+  timesClicked.yellow = 0;
+  timesClicked.green = 0;
+  squares.forEach((square) => {
+    square.innerHTML = "";
+  });
+}
+
+const clearGameBtn = document.getElementById("clear-game");
+clearGameBtn.onclick = () => clearScores();

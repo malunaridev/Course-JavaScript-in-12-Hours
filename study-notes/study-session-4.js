@@ -63,10 +63,7 @@ console.log(result4)
 // usando reduce para somar os networths
 
 let result5 = actors.filter(actor => actor.netWorth > 0)
-
 let money = result5.map(actor => actor.netWorth)
-
 let moneySum = money.reduce(
     (a, b) =>  a + b)
-
 console.log(moneySum)
